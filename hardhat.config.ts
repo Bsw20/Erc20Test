@@ -41,3 +41,20 @@ const config: HardhatUserConfig = {
 };
 
 export default config;
+
+// https://medium.com/@kaishinaw/erc20-using-hardhat-a-comprehensive-guide-3211efba98d4
+require("@nomiclabs/hardhat-waffle");
+
+const ALCHEMY_API_KEY = "6OeUmPqTXXLT0H5-AXEpQVJJPDZbGozs";
+
+const GOERLI_PRIVATE_KEY = "5654e393e0cfa8941bef5e48910413061f4b15866bd5021943d65a121371c968";
+
+module.exports = {
+  solidity: "0.8.9",
+  networks: {
+    goerli: {
+      url: `https://eth-goerli.alchemyapi.io/v2/${ALCHEMY_API_KEY}`,
+      accounts: [GOERLI_PRIVATE_KEY]
+    }
+  }
+};
